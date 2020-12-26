@@ -11,8 +11,8 @@ COPY package*.json /usr/src/app/
 RUN npm ci --production
 
 # Copying source files
-COPY ./.next /usr/src/app/
-COPY ./public /usr/src/app/
+COPY ./.next /usr/src/app/.next
+COPY ./public /usr/src/app/public
 
 # Building app
 EXPOSE 3000
