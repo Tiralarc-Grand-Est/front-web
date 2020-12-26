@@ -52,7 +52,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=ghcr.io/Tiralarc-Grand-Est/front-web
+          DOCKER_IMAGE=ghcr.io/tiralarc-grand-est/front-web
           VERSION=noop
           if [ "${{ github.event_name }}" = "schedule" ]; then
             VERSION=nightly
