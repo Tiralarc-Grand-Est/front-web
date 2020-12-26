@@ -1,4 +1,4 @@
-FROM node:15
+FROM node:15-alpine
 
 ENV PORT 3000
 
@@ -11,8 +11,8 @@ COPY package*.json /usr/src/app/
 RUN npm ci --production
 
 # Copying source files
-COPY ./.next /usr/src/app
-COPY ./public /usr/src/app
+COPY ./.next /usr/src/app/
+COPY ./public /usr/src/app/
 
 # Building app
 EXPOSE 3000
