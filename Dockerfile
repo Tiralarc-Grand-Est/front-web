@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 
 # Installing dependencies
 COPY package*.json /usr/src/app/
-RUN npm ci --production
+RUN npm ci --only=production
 
 # Copying source files
 COPY ./.next /usr/src/app/.next
