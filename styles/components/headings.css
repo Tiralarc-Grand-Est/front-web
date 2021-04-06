@@ -1,0 +1,5 @@
+@layer components {
+  .heading-1 {
+    @apply text-lg font-black font-heading text-brand-500;
+  }
+}

@@ -1,0 +1,45 @@
+@layer components {
+  .btn {
+    @apply inline-block px-10 py-3 font-semibold text-center rounded-lg shadow-md font-heading focus:outline-none focus:ring-2 focus:ring-opacity-75;
+  }
+
+  .btn-sm {
+    @apply px-8 py-2 text-sm btn;
+  }
+
+  .btn-lg {
+    @apply px-16 py-4 text-lg btn;
+  }
+
+  .btn-primary-base {
+    @apply text-white bg-primary-500 hover:bg-primary-700 focus:ring-primary-400;
+  }
+
+  .btn-primary-sm {
+    @apply btn-sm btn-primary-base;
+  }
+
+  .btn-primary {
+    @apply btn btn-primary-base;
+  }
+
+  .btn-primary-lg {
+    @apply btn-lg btn-primary-base;
+  }
+
+  .btn-light-base {
+    @apply text-brand-500 bg-light-500 hover:bg-light-600 focus:ring-primary-400;
+  }
+
+  .btn-light-sm {
+    @apply btn-sm btn-light-base;
+  }
+
+  .btn-light {
+    @apply btn btn-light-base;
+  }
+
+  .btn-light-lg {
+    @apply btn-lg btn-light-base;
+  }
+}
