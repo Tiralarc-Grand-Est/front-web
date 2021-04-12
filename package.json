@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/react": "^17.0.3",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "postcss-import": "^14.0.1",
     "postcss-preset-env": "^6.7.0",
     "prisma": "^2.20.1",
