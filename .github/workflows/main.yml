@@ -20,7 +20,7 @@ jobs:
           node-version: "15"
 
       - name: Setup cache
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.5
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -85,7 +85,7 @@ jobs:
           path: .next
 
       - name: Cache Docker layers
-        uses: actions/cache@v2
+        uses: actions/cache@v2.1.5
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
