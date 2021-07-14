@@ -6,10 +6,10 @@ function Logo({ className }: Props) {
   return (
     <div className={className}>
       <svg
-        clip-rule="evenodd"
+        clipRule="evenodd"
         fillRule="evenodd"
-        stroke-linejoin="round"
-        stroke-miterlimit="1.41421"
+        strokeLinejoin="round"
+        strokeMiterlimit="1.41421"
         viewBox="0 0 957 339"
         width="100"
         xmlns="http://www.w3.org/2000/svg"

@@ -18,7 +18,7 @@ function Layout({ title, children }: Props) {
   return (
     <div>
       <Head>
-        <title>{title} - Comité Régional de Tir à l'Arc du Grand Est</title>
+        <title>{title} - Comité Régional de Tir à l&apos;Arc du Grand Est</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
