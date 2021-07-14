@@ -6,7 +6,7 @@ export default function Showroom() {
   return (
     <div>
       <Head>
-        <title>Showroom - Comité Régional de Tir à l'Arc du Grand Est</title>
+        <title>Showroom - Comité Régional de Tir à l&aops;Arc du Grand Est</title>
       </Head>
 
       <main>
