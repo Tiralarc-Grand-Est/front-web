@@ -1,0 +1,11 @@
+{
+  "name": "Comité Régional de Tir à l'Arc du Grand Est",
+  "short_name": "CRTA Grand Est",
+  "icons": [{
+      "src": "google-touch-icon.png",
+      "sizes": "512x512"
+  }],
+  "background_color": "#6B3992",
+  "theme_color": "#6B3992",
+  "display": "fullscreen"
+}
