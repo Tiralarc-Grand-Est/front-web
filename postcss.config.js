@@ -4,5 +4,7 @@ module.exports = {
       path: ["node_modules"],
     },
     tailwindcss: {},
+    'tailwindcss/nesting': {},
+    autoprefixer: {},
   },
 };

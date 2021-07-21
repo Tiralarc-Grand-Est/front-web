@@ -1,8 +1,9 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  mode: 'jit',
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     colors: {
       "light-brand": "#f9f7fb",
