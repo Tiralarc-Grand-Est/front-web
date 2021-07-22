@@ -22,10 +22,18 @@ export default function Header({ items, toggleMenu, menuOpened }: Props) {
           <div className="flex flex-row justify-between">
             <Link href="/">
               <a className="md:py-3">
-                <Logo variant="white" className="w-[92px]" />
+                <Logo
+                  variant="white"
+                  className="w-[92px]"
+                  ariaLabel="Accueil"
+                />
               </a>
             </Link>
-            <button className="md:hidden" onClick={toggleMenu}>
+            <button
+              className="md:hidden"
+              onClick={toggleMenu}
+              aria-label="Menu"
+            >
               {menuOpened ? (
                 <XIcon className="w-5 h-5 text-white" />
               ) : (

@@ -5,10 +5,11 @@ import { NavItemData } from "./types";
 
 interface Props {
   title: string;
+  description: string;
   children: JSX.Element | JSX.Element[];
 }
 
-export default function Layout({ title, children }: Props) {
+export default function Layout({ title, description, children }: Props) {
   const [menuOpened, setMenuOpened] = useState(false);
 
   function toggleMenu() {
@@ -51,6 +52,7 @@ export default function Layout({ title, children }: Props) {
         </title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.svg" />
         <link rel="mask-icon" href="/mask-icon.svg" color="#6B3992" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

@@ -1,9 +1,10 @@
 interface Props {
   className?: string;
+  ariaLabel: string;
   variant?: "color" | "black" | "white";
 }
 
-function Logo({ className, variant }: Props) {
+function Logo({ className, ariaLabel, variant }: Props) {
   let primaryColor = "#693991";
   let secondaryColor = "#00b3ea";
 
@@ -18,6 +19,8 @@ function Logo({ className, variant }: Props) {
   return (
     <div className={className}>
       <svg
+        role="img"
+        aria-label={ariaLabel}
         clipRule="evenodd"
         fillRule="evenodd"
         strokeLinejoin="round"
