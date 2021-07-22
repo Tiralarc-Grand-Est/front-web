@@ -51,14 +51,14 @@ export default function Layout({ title, description, children }: Props) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <SEO
-          title={title}
-          siteTitle="Comité Régional de Tir à l'Arc du Grand Est"
-          description={description}
-          twitterHandle="CRTA_GrandEst"
-        />
-        <Favicon />
       </Head>
+      <SEO
+        title={title}
+        siteTitle="Comité Régional de Tir à l'Arc du Grand Est"
+        description={description}
+        twitterHandle="CRTA_GrandEst"
+      />
+      <Favicon />
       <Header
         items={navItems}
         menuOpened={menuOpened}
