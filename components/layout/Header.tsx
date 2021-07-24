@@ -42,7 +42,7 @@ export default function Header({ items, toggleMenu, menuOpened }: Props) {
             </button>
           </div>
           <ul
-            className={`md:flex md:flex-row pt-11 md:pt-0 ${
+            className={`md:flex md:flex-row pt-11 md:pt-0 md:-mr-3 ${
               menuOpened ? "" : "hidden"
             }`}
           >
@@ -52,6 +52,7 @@ export default function Header({ items, toggleMenu, menuOpened }: Props) {
                 href={href}
                 activeHrefPrefix={activeHrefPrefix}
                 name={name}
+                className="p-1 -ml-3 md:ml-0"
               />
             ))}
           </ul>

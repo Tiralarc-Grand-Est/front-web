@@ -3,7 +3,8 @@ import { useState } from "react";
 import SEO from "./head/SEO";
 import Favicon from "./head/Favicon";
 import Header from "./Header";
-import { NavItemData } from "./types";
+import Footer from "./Footer";
+import { NavItemData, NavItemLayoutData } from "./types";
 
 interface Props {
   title: string;
@@ -18,36 +19,73 @@ export default function Layout({ title, description, children }: Props) {
     setMenuOpened(!menuOpened);
   }
 
-  const navItems: NavItemData[] = [
+  const navItems: NavItemLayoutData[] = [
+    {
+      href: "/",
+      name: "Accueil",
+      header: false,
+      footer: true,
+    },
     {
       href: "/comite-regional/equipe/",
       activeHrefPrefix: "/comite-regional/",
       name: "Comité Régional",
+      header: true,
+      footer: true,
     },
     {
       href: "/actualites/",
       activeHrefPrefix: "/actualites/",
       name: "Actualités",
+      header: true,
+      footer: true,
     },
     {
       href: "/vie-sportive/calendrier/",
       activeHrefPrefix: "/vie-sportive/",
       name: "Vie sportive",
+      header: true,
+      footer: true,
     },
     {
       href: "/formations/",
       activeHrefPrefix: "/formations/",
       name: "Formations",
+      header: true,
+      footer: true,
     },
     {
       href: "/clubs/",
       activeHrefPrefix: "/clubs/",
       name: "Clubs",
+      header: true,
+      footer: true,
+    },
+    {
+      href: "/donnees-personnelles/",
+      activeHrefPrefix: "/donnees-personnelles/",
+      name: "Données personnelles",
+      header: false,
+      footer: true,
+    },
+    {
+      href: "/mentions-legales/",
+      activeHrefPrefix: "/mentions-legales/",
+      name: "Mentions légales",
+      header: false,
+      footer: true,
+    },
+    {
+      href: "/ressources-graphiques/",
+      activeHrefPrefix: "/ressources-graphiques/",
+      name: "Ressources graphiques",
+      header: false,
+      footer: true,
     },
   ];
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -60,12 +98,12 @@ export default function Layout({ title, description, children }: Props) {
       />
       <Favicon />
       <Header
-        items={navItems}
+        items={navItems.filter(({ header }) => header)}
         menuOpened={menuOpened}
         toggleMenu={toggleMenu}
       />
-      {children}
-      <footer>{"I`m here to stay"}</footer>
+      <main className="flex-grow flex-shrink-0">{children}</main>
+      <Footer items={navItems.filter(({ footer }) => footer)} />
     </div>
   );
 }
