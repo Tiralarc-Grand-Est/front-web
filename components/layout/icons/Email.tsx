@@ -8,9 +8,7 @@ function Email({ className }: Props) {
       <svg
         role="img"
         aria-label="Email"
-        height="42"
         viewBox="0 0 43 42"
-        width="43"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

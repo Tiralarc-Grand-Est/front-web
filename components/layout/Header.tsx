@@ -13,7 +13,7 @@ interface Props {
 export default function Header({ items, toggleMenu, menuOpened }: Props) {
   return (
     <header
-      className={`text-white bg-brand-500 sticky ${
+      className={`text-white bg-brand-500 sticky top-0 z-30 ${
         menuOpened ? "h-screen md:h-auto" : ""
       }`}
     >
