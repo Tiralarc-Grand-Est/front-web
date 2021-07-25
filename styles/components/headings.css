@@ -1,5 +1,9 @@
 @layer components {
   .heading-1 {
-    @apply text-lg font-black font-heading text-brand-500;
+    @apply text-5xl font-black uppercase font-heading text-brand-500;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-bold font-heading text-brand-500;
   }
 }

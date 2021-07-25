@@ -1,5 +1,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+const Montserrat = ["Montserrat", ...defaultTheme.fontFamily.sans];
+const Inter = ["Inter var", ...defaultTheme.fontFamily.sans]
+
 module.exports = {
   mode: 'jit',
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -43,8 +46,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      heading: ["Montserrat", ...defaultTheme.fontFamily.sans],
-      sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+      heading: Montserrat,
+      sans: Inter,
       serif: defaultTheme.fontFamily.serif,
     },
     extend: {
@@ -52,10 +55,31 @@ module.exports = {
         height: "height",
         spacing: "margin, padding",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: "3rem",
+              textTransform: "uppercase",
+              color: theme("colors.brand.500"),
+              fontFamily: theme("fontFamily.heading").join(", "),
+              fontWeight: "900",
+            },
+            h2: {
+              fontSize: "2.25rem",
+              color: theme("colors.brand.500"),
+              fontFamily: theme("fontFamily.heading").join(", "),
+              fontWeight: "800",
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
