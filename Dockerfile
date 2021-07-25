@@ -8,14 +8,13 @@ WORKDIR /usr/src/app
 
 # Installing dependencies
 COPY package*.json /usr/src/app/
-RUN npm ci --only=production
+RUN npm ci
 
 # Copying source files
-COPY ./.next /usr/src/app/.next
-COPY ./public /usr/src/app/public
+COPY . /usr/src/app
 
 # Building app
 EXPOSE 3000
 
 # Running the app
-CMD "npm" "start"
+CMD "npm" "run" "build-start"
