@@ -1,11 +1,11 @@
-import SimpleLayout from "../components/layout/SimpleLayout";
+import Layout from "../components/layout/Layout";
 
 export default function MentionsLegales() {
   return (
-    <SimpleLayout
+    <Layout
       title="Mentions légales"
       description="Mentions légales pour le site du Comité Régional de Tir à l'Arc du Grand Est"
-      mainClassName="prose"
+      mainClassName="simple-layout prose"
     >
       <h1>Mentions légales</h1>
 
@@ -54,6 +54,6 @@ export default function MentionsLegales() {
         </a>
         )
       </p>
-    </SimpleLayout>
+    </Layout>
   );
 }

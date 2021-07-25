@@ -1,4 +1,4 @@
-import SimpleLayout from "../components/layout/SimpleLayout";
+import Layout from "../components/layout/Layout";
 
 const iframeStyle = {
   border: 0,
@@ -8,10 +8,10 @@ const iframeStyle = {
 
 export default function DonneesPersonnelles() {
   return (
-    <SimpleLayout
+    <Layout
       title="Données personnelles"
       description="Le traitement des données personnelles est conforme à la législation, et notamment au RGPD."
-      mainClassName="prose"
+      mainClassName="simple-layout prose"
     >
       <h1>Données personnelles</h1>
 
@@ -69,6 +69,6 @@ export default function DonneesPersonnelles() {
         style={iframeStyle}
         src="https://tracking.tiralarc-grand-est.fr/index.php?module=CoreAdminHome&action=optOut&language=fr&backgroundColor=ffffff&fontColor=&fontSize=1rem&fontFamily=-apple-system%2CBlinkMacSystemFont%2CSegoe%20UI%2CRoboto%2CHelvetica%20Neue%2CArial%2Csans-serif%2CApple%20Color%20Emoji%2CSegoe%20UI%20Emoji%2CSegoe%20UI%20Symbol%2CNoto%20Color%20Emoji"
       />
-    </SimpleLayout>
+    </Layout>
   );
 }

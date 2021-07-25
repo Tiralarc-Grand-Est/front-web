@@ -1,13 +1,14 @@
 import Image from "next/image";
 import DownloadCard from "../components/DownloadCard";
-import SimpleLayout from "../components/layout/SimpleLayout";
+import Layout from "../components/layout/Layout";
 import vignettesImg from "../public/images/vignettes.png";
 
 export default function RessourcesGraphiques() {
   return (
-    <SimpleLayout
+    <Layout
       title="Ressources graphiques"
       description="Nous mettons à disposition du grand public un logo au format vignette, carré."
+      mainClassName="simple-layout"
     >
       <h1 className="heading-1">Ressources graphiques</h1>
 
@@ -48,6 +49,6 @@ export default function RessourcesGraphiques() {
           ).
         </p>
       </div>
-    </SimpleLayout>
+    </Layout>
   );
 }

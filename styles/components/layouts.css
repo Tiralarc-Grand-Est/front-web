@@ -1,0 +1,5 @@
+@layer components {
+  .simple-layout {
+    @apply container p-8 mx-auto lg:max-w-3xl;
+  }
+}
