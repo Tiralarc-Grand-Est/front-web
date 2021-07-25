@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "generate": "prisma generate",
     "build": "next build && next-sitemap",
     "start": "next start",
-    "build-start": "npm run build && npm start",
+    "build-start": "npm run generate && npm run build && npm start",
     "lint": "next lint"
   },
   "dependencies": {

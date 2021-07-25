@@ -30,7 +30,7 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Build next.js
+      - name: Lint
         run: npm run lint
 
   docker:
