@@ -4,7 +4,5 @@ module.exports = {
   trailingSlash: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-  },
+  productionBrowserSourceMaps: true
 };

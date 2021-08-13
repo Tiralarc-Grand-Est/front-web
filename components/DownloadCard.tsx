@@ -18,7 +18,7 @@ function DownloadCard({ title, subtitle, href, className }: Props) {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary "
+          className="btn btn-primary"
         >
           Télécharger
         </a>
