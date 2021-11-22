@@ -1,0 +1,286 @@
+// Theme
+$primary: #693991;
+$secondary: #00b3ea;
+$body-color: #272727;
+$headings-color: #272727;
+$sub-headings-color: #474747;
+$link-color: #3d2b6e;
+
+$enable-responsive-font-sizes: true;
+$enable-shadows: true;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-base: $font-family-sans-serif;
+
+$headings-font-family: "Montserrat", $font-family-sans-serif;
+
+$btn-font-weight: 500;
+
+// Card row
+@import "cardrow";
+
+// Font
+@import "font";
+
+// Date picker
+@import "node_modules/react-datepicker/dist/react-datepicker";
+
+// Headings
+h1 {
+  color: white;
+  background-color: $secondary;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: $font-size-base * 2;
+  font-weight: 900;
+
+  @include media-breakpoint-up(sm) {
+    padding: 50px 20px;
+    font-size: $font-size-base * 2.5;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 100px 20px;
+    font-size: $font-size-base * 3;
+  }
+
+  &.compact {
+    color: $primary;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+    font-size: $font-size-base * 2.5;
+  }
+}
+
+.h1-compact h1 {
+  color: $primary;
+  background-color: transparent;
+  text-align: left;
+  padding: 0;
+  font-size: $font-size-base * 2.5;
+}
+
+h2 {
+  color: $body-color;
+  font-weight: 900;
+}
+
+h3,
+h4 {
+  color: $body-color;
+  font-weight: 500;
+}
+
+p {
+  font-family: "Noto Serif", serif;
+}
+
+.price-tag {
+  font-size: $font-size-base * 2;
+  font-weight: 900;
+  font-family: $headings-font-family;
+}
+
+// Header
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  & > div {
+    width: 90px;
+    height: 34px;
+  }
+}
+
+.navbar-brand img {
+  height: 34px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-nav .active > .nav-link {
+  font-weight: bold;
+}
+
+// Presentation
+.presentation {
+  height: 480px;
+  background-image: url(../images/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #a8a8a8;
+  color: white;
+}
+
+// Custom
+
+.text-white a,
+.text-white h4 {
+  color: white;
+}
+
+.text-white .text-muted {
+  color: #c9c9c9 !important;
+}
+
+// Content
+.main-col {
+  @extend .col;
+}
+
+.secondary-col {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(sm) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+  @include media-breakpoint-up(lg) {
+    @include make-col(3);
+  }
+}
+
+// Comite regional nav
+.nav-link.active {
+  font-weight: bold;
+}
+
+// Post
+.post-wrapper {
+  max-width: 680px;
+  margin: 2em auto;
+
+  .post-description {
+    color: $sub-headings-color;
+    font-size: 1.3rem;
+  }
+
+  figure {
+    margin-bottom: 2em;
+
+    figcaption {
+      color: $sub-headings-color;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  .post-content {
+    p,
+    ul {
+      font-family: "Noto Serif", serif;
+      margin-top: 2em;
+      margin-bottom: -0.46em;
+      font-size: 21px;
+      letter-spacing: -0.004em;
+      line-height: 1.58;
+      word-break: break-word;
+    }
+
+    table {
+      @extend .table;
+      @extend .table-striped;
+
+      margin-top: 1rem;
+    }
+  }
+
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.signature {
+  .image-container {
+    max-width: 110px;
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Footer
+.main-footer {
+  font-size: 85%;
+  text-align: center;
+  background-color: #f7f7f7;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+
+  a {
+    font-weight: 500;
+    color: #495057;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .footer-links {
+    padding-left: 0;
+    margin-bottom: 1rem;
+
+    li {
+      display: inline-block;
+    }
+
+    li + li {
+      margin-left: 1rem;
+    }
+  }
+
+  .partners-logos {
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
+
+    li {
+      vertical-align: bottom;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+
+      a {
+        width: 100%;
+        display: inline-block;
+      }
+
+      &.ffta-logo {
+        width: 287px;
+      }
+
+      &.grand-est-logo {
+        width: 158px;
+      }
+
+      &.cnds-logo {
+        width: 171px;
+      }
+
+      &.cros-logo {
+        width: 44px;
+      }
+    }
+
+    li + li {
+      margin-left: 1rem;
+    }
+  }
+}

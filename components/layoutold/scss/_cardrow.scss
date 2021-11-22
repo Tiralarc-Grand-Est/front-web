@@ -1,0 +1,147 @@
+//
+// Base styles
+//
+
+.cardrow {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: $card-bg;
+  background-clip: border-box;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+  margin-bottom: 1rem; // Fix for few cardrows
+}
+
+.cardrow-body {
+  // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+  // as much space as possible, ensuring footers are aligned to the bottom.
+  flex: 1 1 auto;
+  padding: $card-spacer-x;
+}
+
+.cardrow-title {
+  margin-bottom: $card-spacer-y;
+}
+
+.cardrow-subtitle {
+  margin-top: -($card-spacer-y / 2);
+  margin-bottom: 0;
+}
+
+.cardrow-text:last-child {
+  margin-bottom: 0;
+}
+
+.cardrow-link {
+  @include hover {
+    text-decoration: none;
+  }
+
+  + .cardrow-link {
+    margin-left: $card-spacer-x;
+  }
+}
+
+.cardrow {
+  > .list-group:first-child {
+    .list-group-item:first-child {
+      @include border-top-radius($card-border-radius);
+    }
+  }
+
+  > .list-group:last-child {
+    .list-group-item:last-child {
+      @include border-bottom-radius($card-border-radius);
+    }
+  }
+}
+
+//
+// Optional textual caps
+//
+
+.cardrow-header {
+  padding: $card-spacer-y $card-spacer-x;
+  margin-bottom: 0; // Removes the default margin-bottom of <hN>
+  background-color: $card-cap-bg;
+  border-bottom: $card-border-width solid $card-border-color;
+
+  &:first-child {
+    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
+  }
+}
+
+.cardrow-footer {
+  padding: $card-spacer-y $card-spacer-x;
+  background-color: $card-cap-bg;
+  border-top: $card-border-width solid $card-border-color;
+
+  &:last-child {
+    @include border-radius(0 0 $card-inner-border-radius $card-inner-border-radius);
+  }
+}
+
+// Card image caps
+.cardrow-img-left {
+  height: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-left-radius($card-inner-border-radius);
+}
+
+.cardrow-img-right {
+  height: 100%; // Required because we use flexbox and this inherently applies align-self: stretch
+  @include border-right-radius($card-inner-border-radius);
+}
+
+//
+// Card groups
+//
+
+.cardrow-group {
+  display: flex;
+  flex-flow: column wrap;
+
+  .cardrow {
+    flex: 1 0 0%;
+
+    + .cardrow {
+      margin-top: 0;
+      border-top: 0;
+    }
+
+    // Handle rounded corners
+    @if $enable-rounded {
+      &:first-child {
+        @include border-bottom-radius(0);
+
+        .cardrow-img-left {
+          border-bottom-left-radius: 0;
+        }
+        .cardrow-img-right {
+          border-bottom-right-radius: 0;
+        }
+      }
+      &:last-child {
+        @include border-top-radius(0);
+
+        .cardrow-img-left {
+          border-top-left-radius: 0;
+        }
+        .cardrow-img-bottom {
+          border-top-right-radius: 0;
+        }
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+
+        .cardrow-img-left,
+        .cardrow-img-right {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
