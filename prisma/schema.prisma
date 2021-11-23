@@ -10,6 +10,75 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Team {
+  id             Int               @id @default(autoincrement())
+  timestampStart DateTime          @db.Timestamptz(3)
+  timestampEnd   DateTime?         @db.Timestamptz(3)
+  assignations   TeamAssignation[]
+  createdAt      DateTime          @default(now())
+  createdById    String
+  updatedAt      DateTime          @updatedAt
+  updatedById    String?
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}
+
+model TeamMember {
+  id           Int               @id @default(autoincrement())
+  active       Boolean
+  photoUrl     String?
+  firstName    String
+  lastName     String
+  gender       Gender
+  email        String?
+  assignations TeamAssignation[]
+  createdAt    DateTime          @default(now())
+  createdById  String
+  updatedAt    DateTime          @updatedAt
+  updatedById  String?
+}
+
+model TeamAssignation {
+  id          Int        @id @default(autoincrement())
+  manager     Boolean
+  email       String?
+  teamId      Int
+  team        Team       @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  memberId    Int
+  member      TeamMember @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  roleId      Int
+  role        TeamRole   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  createdAt   DateTime   @default(now())
+  createdById String
+  updatedAt   DateTime   @updatedAt
+  updatedById String?
+}
+
+enum RoleType {
+  Main
+  Commission
+}
+
+model TeamRole {
+  id           Int               @id @default(autoincrement())
+  title        String
+  subtitle     String?
+  type         RoleType
+  parentId     Int?
+  parent       TeamRole?         @relation("TeamRoleToTeamRole", fields: [parentId], references: [id], onDelete: Cascade)
+  children     TeamRole[]        @relation("TeamRoleToTeamRole")
+  assignations TeamAssignation[]
+  order        Int
+  createdAt    DateTime          @default(now())
+  createdById  String
+  updatedAt    DateTime          @updatedAt
+  updatedById  String?
+}
+
 model Club {
   id        Int    @id
   reference String @unique
