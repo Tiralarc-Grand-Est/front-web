@@ -4,9 +4,7 @@ const Montserrat = ["Montserrat", ...defaultTheme.fontFamily.sans];
 const Inter = ["Inter var", ...defaultTheme.fontFamily.sans]
 
 module.exports = {
-  mode: 'jit',
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: 'class', // or 'media' or 'class'
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     colors: {
       "light-brand": "#f9f7fb",
@@ -75,9 +73,6 @@ module.exports = {
         },
       }),
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
